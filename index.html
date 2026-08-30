@@ -1,1132 +1,416 @@
+<script type="text/javascript">
+    var YOceC_bwm_PbNUic={"it":4550290,"key":"a52b8"};
+</script>
+<script src="https://duw03nk63ml3f.cloudfront.net/7474e53.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#08090d">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Brookhaven RP Items | Roblox</title>
-<meta name="description" content="Explore Brookhaven RP items, Premium, VIP, vehicles and more.">
-<meta name="robots" content="index,follow">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<title>Poppy Playtime Chapter 2</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --bg:#08090d;
-  --card:#11141b;
-  --card2:#171a22;
-  --line:rgba(255,255,255,.09);
-  --white:#fff;
-  --muted:#9299a8;
-  --green:#00d084;
-  --green2:#00a968;
+* {
+  box-sizing: border-box;
 }
 
-html{scroll-behavior:smooth}
-
-body{
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background:
-    radial-gradient(circle at 10% 0%,rgba(88,101,242,.16),transparent 32%),
-    radial-gradient(circle at 90% 15%,rgba(0,208,132,.10),transparent 28%),
-    var(--bg);
-  color:var(--white);
-  font-family:Inter,Arial,sans-serif;
-  min-height:100vh;
+    radial-gradient(circle at 50% 0%, #5e173d 0%, transparent 38%),
+    linear-gradient(180deg, #09070d 0%, #140914 50%, #07070b 100%);
+  color: #f8edf4;
+  min-height: 100vh;
 }
 
-button,
-select,
-input{font:inherit}
-
-button{cursor:pointer}
-
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(8,9,13,.86);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
+/* Main card */
+.container {
+  max-width: 520px;
+  margin: 18px auto;
+  padding: 18px;
+  background: rgba(18, 13, 22, 0.96);
+  border: 1px solid rgba(255, 48, 119, 0.25);
+  border-radius: 22px;
+  box-shadow:
+    0 10px 45px rgba(0,0,0,.75),
+    0 0 35px rgba(255, 35, 111, .08);
 }
 
-.topbar-inner{
-  width:min(1120px,calc(100% - 28px));
-  min-height:66px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+/* Top badge */
+.game-badge {
+  text-align: center;
+  margin-bottom: 18px;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:900;
-  font-size:14px;
+.game-badge span {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 30px;
+  background: rgba(255, 40, 112, .12);
+  border: 1px solid rgba(255, 40, 112, .35);
+  color: #ff5d9a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.brand img{
-  width:40px;
-  height:40px;
-  object-fit:cover;
-  border-radius:12px;
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.language select{
-  color:white;
-  background:#151821;
-  border:1px solid var(--line);
-  border-radius:11px;
-  padding:9px 12px;
-  outline:none;
+.header img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 17px;
+  border: 2px solid #ff3d82;
+  box-shadow: 0 0 22px rgba(255, 45, 119, .25);
 }
 
-/* HERO */
-
-.hero{
-  width:min(1120px,calc(100% - 28px));
-  margin:auto;
-  padding:40px 0 25px;
+.header-title h1 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.15;
+  color: #ffffff;
 }
 
-.hero-box{
-  position:relative;
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:30px 20px;
-  background:
-    linear-gradient(135deg,rgba(88,101,242,.13),rgba(0,208,132,.05)),
-    #11141b;
-  box-shadow:0 25px 80px rgba(0,0,0,.35);
+.header-title h1 span {
+  color: #ff4388;
 }
 
-.hero-box:after{
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  right:-100px;
-  top:-100px;
-  border-radius:50%;
-  background:rgba(0,208,132,.11);
-  filter:blur(15px);
+.header-title p {
+  margin: 5px 0 0;
+  color: #a9a0aa;
+  font-size: 12px;
 }
 
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:760px;
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin-top: 18px;
 }
 
-.hero-logo{
-  width:75px;
-  height:75px;
-  border-radius:21px;
-  object-fit:cover;
-  margin-bottom:17px;
-  border:2px solid rgba(255,255,255,.13);
+.stats div {
+  text-align: center;
+  padding: 10px 4px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 10px;
+  font-size: 11px;
+  color: #c9c2ca;
 }
 
-.eyebrow{
-  color:#83f3c5;
-  font-size:11px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  margin-bottom:9px;
+/* Main download button */
+.button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 13px;
+  font-size: 15px;
+  background: linear-gradient(90deg, #ff2f78, #d9155e);
+  color: white;
+  font-weight: 800;
+  border: 0;
+  border-radius: 11px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 30, 105, .2);
+  transition: .25s;
 }
 
-.hero h1{
-  font-size:clamp(35px,8vw,65px);
-  line-height:.98;
-  letter-spacing:-2px;
+.button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #ff4387, #ed1b68);
 }
 
-.hero h1 .accent{
-  display:block;
-  font-family:"Luckiest Guy",cursive;
-  letter-spacing:1px;
-  background:linear-gradient(90deg,#fff,#a9ffe0);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+/* Share button */
+.secondary-btn {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.13);
+  color: #eee;
+  box-shadow: none;
 }
 
-.hero-description{
-  color:var(--muted);
-  max-width:620px;
-  font-size:14px;
-  line-height:1.7;
-  margin-top:17px;
+.secondary-btn:hover {
+  background: rgba(255,255,255,.1);
 }
 
-.hero-actions{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:23px;
+/* Screenshots */
+.screenshots {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.primary{
-  border:0;
-  padding:14px 20px;
-  border-radius:13px;
-  color:#001b11;
-  background:linear-gradient(135deg,#00ed98,#00b975);
-  font-weight:900;
-  box-shadow:0 10px 30px rgba(0,208,132,.18);
+.screenshots img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,.55);
 }
 
-.live{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#a5f6d3;
-  font-size:11px;
-  font-weight:700;
+/* About */
+.about {
+  margin-top: 22px;
+  padding: 17px;
+  background: rgba(255,255,255,.025);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.07);
 }
 
-.live-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 13px var(--green);
+.about h2 {
+  margin: 0 0 9px;
+  font-size: 18px;
+  color: #ff4b8d;
 }
 
-/* ITEMS */
-
-.section{
-  width:min(1120px,calc(100% - 28px));
-  margin:auto;
-  padding:20px 0 60px;
+.about p {
+  margin: 0;
+  color: #bbb2bc;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-.section-title{
-  margin-bottom:20px;
+/* Features */
+.features {
+  margin-top: 18px;
 }
 
-.section-title h2{
-  font-size:24px;
-  font-weight:900;
+.features h2 {
+  font-size: 18px;
+  color: #ff4b8d;
 }
 
-.section-title p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:5px;
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.035);
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
+.feature-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255,45,119,.12);
+  font-size: 19px;
 }
 
-.card{
-  overflow:hidden;
-  background:linear-gradient(180deg,#151821,#0f1117);
-  border:1px solid var(--line);
-  border-radius:19px;
-  padding:10px;
-  transition:.2s;
+.feature strong {
+  font-size: 13px;
 }
 
-.card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(0,208,132,.3);
+.feature small {
+  display: block;
+  color: #8f8791;
+  margin-top: 2px;
 }
 
-.image{
-  aspect-ratio:1/1;
-  overflow:hidden;
-  border-radius:14px;
-  background:#f6f6f6;
+/* Tags */
+.tags {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.image img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:contain;
+.tags span {
+  background: rgba(255, 45, 119, .08);
+  padding: 6px 11px;
+  font-size: 11px;
+  border-radius: 8px;
+  color: #ff649a;
+  border: 1px solid rgba(255,45,119,.2);
 }
 
-.info{
-  padding:12px 3px 9px;
+/* Dark mode button */
+.dark-toggle {
+  display: block;
+  margin: 0 auto 16px;
+  background: rgba(255,255,255,.06);
+  color: #ddd;
+  padding: 7px 13px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
-.name{
-  font-size:13px;
-  font-weight:800;
-}
-
-.type{
-  color:#727988;
-  font-size:10px;
-  margin-top:4px;
-}
-
-.claim{
-  width:100%;
-  border:1px solid rgba(0,208,132,.25);
-  border-radius:11px;
-  padding:11px;
-  background:rgba(0,208,132,.09);
-  color:#65f2bc;
-  font-weight:800;
-}
-
-.claim:hover{
-  background:var(--green);
-  color:#001b11;
-}
-
-/* MODAL */
-
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:16px;
-}
-
-.modal.open{display:flex}
-
-.overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.8);
-  backdrop-filter:blur(9px);
-}
-
-.modal-box{
-  position:relative;
-  width:min(440px,100%);
-  border:1px solid var(--line);
-  border-radius:24px;
-  overflow:hidden;
-  background:#101219;
-  box-shadow:0 30px 100px rgba(0,0,0,.7);
-  animation:show .2s ease;
-}
-
-@keyframes show{
-  from{opacity:0;transform:scale(.96) translateY(12px)}
-  to{opacity:1;transform:none}
-}
-
-.modal-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:17px;
-  border-bottom:1px solid var(--line);
-}
-
-.modal-brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.modal-brand img{
-  width:42px;
-  height:42px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-.modal-brand strong{
-  display:block;
-  font-size:13px;
-}
-
-.modal-brand small{
-  display:block;
-  color:#707785;
-  font-size:10px;
-  margin-top:3px;
-}
-
-.close{
-  width:34px;
-  height:34px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#171922;
-  color:white;
-}
-
-.modal-body{
-  padding:20px;
-}
-
-.selected{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:11px;
-  background:#171a22;
-  border:1px solid var(--line);
-  border-radius:14px;
-  margin-bottom:18px;
-}
-
-.selected img{
-  width:60px;
-  height:60px;
-  object-fit:contain;
-  border-radius:11px;
-  background:#f6f6f6;
-}
-
-.selected strong{
-  font-size:14px;
-}
-
-.selected span{
-  display:block;
-  color:#65f2bc;
-  font-size:9px;
-  font-weight:800;
-  margin-top:5px;
-}
-
-.modal-body h3{
-  font-size:20px;
-  margin-bottom:7px;
-}
-
-.modal-body p{
-  color:#9097a5;
-  font-size:12px;
-  line-height:1.65;
-}
-
-.username{
-  width:100%;
-  margin-top:16px;
-  padding:13px;
-  color:white;
-  background:#0a0c11;
-  border:1px solid var(--line);
-  border-radius:12px;
-  outline:none;
-}
-
-.username:focus{
-  border-color:rgba(0,208,132,.55);
-}
-
-.error{
-  min-height:20px;
-  color:#ff7777;
-  font-size:10px;
-  padding-top:6px;
-}
-
-.continue{
-  width:100%;
-  border:0;
-  border-radius:12px;
-  padding:13px;
-  color:#001b11;
-  background:linear-gradient(135deg,#00ed98,#00b975);
-  font-weight:900;
-  margin-top:4px;
-}
-
-.notice{
-  display:none;
-  margin-top:15px;
-  padding:13px;
-  border-radius:12px;
-  background:rgba(255,255,255,.045);
-  border:1px solid var(--line);
-}
-
-.notice.show{
-  display:block;
-}
-
-.notice strong{
-  display:block;
-  font-size:13px;
-  margin-bottom:5px;
-}
-
-.notice span{
-  color:#959cab;
-  font-size:11px;
-  line-height:1.6;
-}
-
-.secure{
-  text-align:center;
-  color:#666e7b;
-  font-size:9px;
-  margin-top:12px;
-}
-
-/* FOOTER */
-
-footer{
-  border-top:1px solid var(--line);
-  padding:28px 15px 38px;
-  text-align:center;
-  color:#666e7b;
-  font-size:10px;
-  line-height:1.8;
-}
-
-/* DESKTOP */
-
-@media(min-width:650px){
-  .hero{padding-top:60px}
-
-  .hero-box{
-    padding:48px;
+/* Mobile */
+@media(max-width: 420px) {
+  .container {
+    margin: 8px;
+    padding: 15px;
+    border-radius: 18px;
   }
 
-  .grid{
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:15px;
+  .header img {
+    width: 64px;
+    height: 64px;
   }
-}
 
-@media(min-width:950px){
-  .grid{
-    grid-template-columns:repeat(5,minmax(0,1fr));
-  }
-}
-
-html[dir="rtl"]{
-  text-align:right;
-}
-</style>
-
-<style>
-.locker-claim-btn {
-    width: 100%;
-    min-height: 50px;
-    border: 0;
-    border-radius: 12px;
-    padding: 13px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-family: Inter, sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-}
-
-.locker-claim-btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.08);
-}
-
-.locker-claim-btn:active {
-    transform: scale(.97);
-}
-
-.locker-claim-btn span:first-child {
+  .header-title h1 {
     font-size: 18px;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
+<div class="container">
 
-    <div class="brand">
-      <img src="https://i.postimg.cc/13QgR98K/FIdafy-Gy-400x400.jpg" alt="Brookhaven">
-      <span>Brookhaven RP</span>
-    </div>
+  <button class="dark-toggle" onclick="toggleDarkMode()">
+    🌙 Dark Mode
+  </button>
 
-    <div class="language">
-      <select id="language">
-        <option value="en">🌐 English</option>
-        <option value="es">🌐 Español</option>
-        <option value="fr">🌐 Français</option>
-        <option value="ar">🌐 العربية</option>
-        <option value="pt">🌐 Português</option>
-        <option value="fil">🌐 Filipino</option>
-      </select>
-    </div>
-
+  <div class="game-badge">
+    <span>HORROR SURVIVAL • CHAPTER 2</span>
   </div>
-</header>
 
+  <div class="header">
 
-<section class="hero">
+    <!-- Poppy Playtime icon -->
+    <img
+      src="https://i.postimg.cc/h42XNrYm/poppy-playtime-chapter-2-fly-in-a-web-logo.jpg"
+      alt="Poppy Playtime Chapter 2">
 
-  <div class="hero-box">
-
-    <div class="hero-content">
-
-      <img
-        class="hero-logo"
-        src="https://i.postimg.cc/13QgR98K/FIdafy-Gy-400x400.jpg"
-        alt="Brookhaven RP">
-
-      <div class="eyebrow" data-i18n="eyebrow">
-        Roblox Brookhaven 🏡 RP
-      </div>
-
-      <h1>
-        <span data-i18n="title1">EXPLORE</span>
-        <span class="accent" data-i18n="title2">BROOKHAVEN ITEMS</span>
-      </h1>
-
-      <p class="hero-description" data-i18n="description">
-        Explore Brookhaven RP items and choose the item you want to learn more about.
-      </p>
-
-      <div class="hero-actions">
-
-        <a href="#items" class="primary" data-i18n="browse">
-          Browse Items
-        </a>
-
-        <div class="live">
-          <span class="live-dot"></span>
-          <span id="players">1,248 players viewing</span>
-        </div>
-
-      </div>
-
+    <div class="header-title">
+      <h1>Poppy Playtime <span>Chapter 2</span></h1>
+      <p>Fly in a Web • Explore • Survive</p>
     </div>
 
   </div>
 
-</section>
-
-
-<section class="section" id="items">
-
-  <div class="section-title">
-    <h2 data-i18n="available">Available Items</h2>
-    <p data-i18n="choose">Select an item to continue.</p>
+  <div class="stats">
+    <div>⭐ 4.8 Rating</div>
+    <div>🎮 Chapter 2</div>
+    <div>🔞 12+</div>
   </div>
 
-  <div class="grid" id="grid"></div>
+  <!-- Download -->
+  <button class="button" onclick="_Yg();">
+    ⬇️ DOWNLOAD GAME
+  </button>
 
-</section>
+  <!-- Share -->
+  <button class="button secondary-btn" onclick="shareApp()">
+    🔗 SHARE GAME
+  </button>
 
+  <!-- Screenshots -->
+  <div class="screenshots">
 
-<footer>
+    <img
+      src="https://i.postimg.cc/02tH6LBg/unnamed-(4).webp"
+      alt="Poppy Playtime Chapter 2 Screenshot">
 
-  <div>
-    Brookhaven RP • Roblox • Premium • VIP • Vehicles •
-    Music • Penthouse • Disaster Pass
+    <img
+      src="https://i.postimg.cc/NFjkB0Y4/unnamed-(3).webp"
+      alt="Poppy Playtime Chapter 2 Gameplay">
+
   </div>
 
-  <div>
-    This is an independent fan-made page and is not affiliated with Roblox Corporation.
+  <!-- About -->
+  <div class="about">
+
+    <h2>About Poppy Playtime</h2>
+
+    <p>
+      Poppy Playtime: Chapter 2 takes you deeper into the abandoned
+      Playtime Co. factory. Explore mysterious locations, solve challenging
+      puzzles and use the GrabPack to discover what happened inside the
+      factory. But be careful — something is watching you.
+    </p>
+
   </div>
 
-</footer>
+  <!-- Features -->
+  <div class="features">
 
+    <h2>Game Features</h2>
 
-<!-- MODAL -->
-
-<div class="modal" id="modal">
-
-  <div class="overlay" onclick="closeModal()"></div>
-
-  <div class="modal-box">
-
-    <div class="modal-header">
-
-      <div class="modal-brand">
-
-        <img
-          src="https://i.postimg.cc/13QgR98K/FIdafy-Gy-400x400.jpg"
-          alt="Brookhaven">
-
-        <div>
-          <strong>Brookhaven RP</strong>
-          <small>Item information</small>
-        </div>
-
+    <div class="feature">
+      <div class="feature-icon">🖐️</div>
+      <div>
+        <strong>GrabPack</strong>
+        <small>Use new abilities to solve puzzles.</small>
       </div>
-
-      <button class="close" onclick="closeModal()">✕</button>
-
     </div>
 
-
-    <div class="modal-body">
-
-      <div class="selected">
-
-        <img id="selectedImg" src="" alt="Item">
-
-        <div>
-          <strong id="selectedName"></strong>
-          <span>SELECTED ITEM</span>
-        </div>
-
+    <div class="feature">
+      <div class="feature-icon">🕷️</div>
+      <div>
+        <strong>Mommy Long Legs</strong>
+        <small>Face a terrifying new enemy.</small>
       </div>
-
-      <h3 data-i18n="modalTitle">
-        Continue with your item
-      </h3>
-
-      <p data-i18n="modalText">
-        Enter your Roblox username if you want to identify the account associated with this request. Never enter your Roblox password.
-      </p>
-
-      <input
-        id="username"
-        class="username"
-        type="text"
-        maxlength="20"
-        autocomplete="off"
-        placeholder="Roblox username">
-
-      <div class="error" id="error"></div>
-
-      <button id="lockerBtn" class="btn btn-claim locker-claim-btn" type="button">
-  <span>🔓</span>
-  <span>Verify &amp; Claim</span>
-</button>
-
-      <div class="notice" id="notice">
-
-        <strong data-i18n="noticeTitle">
-          Claim unavailable
-        </strong>
-
-        <span data-i18n="noticeText">
-          This website cannot directly add Roblox items or game passes to an account. Please use Roblox's official game page or official purchase/claim system to obtain items.
-        </span>
-
-      </div>
-
-      <div class="secure">
-        🔒 Never share your Roblox password
-      </div>
-
     </div>
 
+    <div class="feature">
+      <div class="feature-icon">🏭</div>
+      <div>
+        <strong>Playtime Factory</strong>
+        <small>Explore a huge mysterious location.</small>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tags">
+    <span>#PoppyPlaytime</span>
+    <span>#Chapter2</span>
+    <span>#HorrorGame</span>
+    <span>#MobileGame</span>
   </div>
 
 </div>
 
-
 <script>
 
-/* =========================================================
-   ITEMS
-========================================================= */
-
-const items = [
-
-  ["Premium","https://i.postimg.cc/28rhH82h/Premium-Pass.webp"],
-  ["Vehicle Upgrade","https://i.postimg.cc/m2L1Ypgj/Vehicle1.webp"],
-  ["Vehicle Speed","https://i.postimg.cc/ZRm5T09x/Vehicles-Speed-Unlocked.webp"],
-  ["Music Unlocked","https://i.postimg.cc/vH4bw5qF/Music-Unlocked.webp"],
-  ["On Demand Fire","https://i.postimg.cc/kX3f7mw6/On-Demand-Fire.webp"],
-  ["Horse Unlocked","https://i.postimg.cc/XNz6LpVH/no-Filter-(1).png"],
-  ["Land Unlocked","https://i.postimg.cc/zfZggzbb/Land-Unlocked.webp"],
-  ["Faces Unlocked","https://i.postimg.cc/vmZc948m/Faces-Unlocked.webp"],
-  ["Vehicle Pack","https://i.postimg.cc/W13vwgr1/Vehicle-Pack.webp"],
-  ["Penthouse","https://bhaven.top/icons/penthouse-icon.png"],
-  ["Theme Pack","https://i.postimg.cc/bY3VHMRd/Penthouse-Pass.webp"],
-  ["Disaster Pass","https://i.postimg.cc/qqRL5JGq/Disaster-Pack.webp"],
-  ["Estates Unlocked","https://i.postimg.cc/XNzcv08w/Estates-Unlocked.webp"],
-  ["Boat Pack","https://i.postimg.cc/MHMBBvDb/Boat-Pack.webp"],
-  ["VIP","https://i.postimg.cc/vTV1BCYx/VIP-Pass.webp"]
-
-];
-
-
-/* =========================================================
-   RENDER
-========================================================= */
-
-const grid = document.getElementById("grid");
-
-items.forEach((item,index)=>{
-
-  const card = document.createElement("article");
-
-  card.className = "card";
-
-  card.innerHTML = `
-
-    <div class="image">
-      <img
-        src="${item[1]}"
-        alt="${item[0]}"
-        loading="${index < 4 ? "eager" : "lazy"}">
-    </div>
-
-    <div class="info">
-      <div class="name">${item[0]}</div>
-      <div class="type">Brookhaven RP</div>
-    </div>
-
-    <button
-      class="claim"
-      data-index="${index}">
-      Claim
-    </button>
-
-  `;
-
-  grid.appendChild(card);
-
-});
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-const modal = document.getElementById("modal");
-
-const selectedImg =
-  document.getElementById("selectedImg");
-
-const selectedName =
-  document.getElementById("selectedName");
-
-const username =
-  document.getElementById("username");
-
-const error =
-  document.getElementById("error");
-
-const notice =
-  document.getElementById("notice");
-
-
-grid.addEventListener("click",event=>{
-
-  const button =
-    event.target.closest(".claim");
-
-  if(!button) return;
-
-  const item =
-    items[Number(button.dataset.index)];
-
-  selectedName.textContent = item[0];
-  selectedImg.src = item[1];
-
-  username.value = "";
-  error.textContent = "";
-  notice.classList.remove("show");
-
-  modal.classList.add("open");
-
-  document.body.style.overflow = "hidden";
-
-  setTimeout(()=>{
-    username.focus();
-  },100);
-
-});
-
-
-function closeModal(){
-
-  modal.classList.remove("open");
-
-  document.body.style.overflow = "";
-
+function toggleDarkMode() {
+  document.body.classList.toggle("light-mode");
 }
 
+function shareApp() {
 
-/* =========================================================
-   CONTINUE
-========================================================= */
+  const shareText =
+    "Poppy Playtime Chapter 2 🎮🧸 Check it out: "
+    + window.location.href;
 
-function continueClaim(){
+  if (navigator.share) {
 
-  const value =
-    username.value.trim();
-
-  error.textContent = "";
-
-  if(!value){
-
-    error.textContent =
-      "Please enter your Roblox username.";
-
-    username.focus();
-
-    return;
-  }
-
-  if(value.length < 3){
-
-    error.textContent =
-      "Please enter a valid username.";
-
-    username.focus();
-
-    return;
-  }
-
-  if(!/^[A-Za-z0-9_]+$/.test(value)){
-
-    error.textContent =
-      "Use only letters, numbers and underscore.";
-
-    username.focus();
-
-    return;
-  }
-
-  notice.classList.add("show");
-
-}
-
-
-/* =========================================================
-   LANGUAGE
-========================================================= */
-
-const translations = {
-
-  en:{
-    eyebrow:"Roblox Brookhaven 🏡 RP",
-    title1:"EXPLORE",
-    title2:"BROOKHAVEN ITEMS",
-    description:"Explore Brookhaven RP items and choose the item you want to learn more about.",
-    browse:"Browse Items",
-    available:"Available Items",
-    choose:"Select an item to continue.",
-    modalTitle:"Continue with your item",
-    modalText:"Enter your Roblox username if you want to identify the account associated with this request. Never enter your Roblox password.",
-    continue:"Continue",
-    noticeTitle:"Claim unavailable",
-    noticeText:"This website cannot directly add Roblox items or game passes to an account. Please use Roblox's official game page or official purchase/claim system to obtain items."
-  },
-
-  es:{
-    eyebrow:"Roblox Brookhaven 🏡 RP",
-    title1:"EXPLORA",
-    title2:"ITEMS DE BROOKHAVEN",
-    description:"Explora los artículos de Brookhaven RP y selecciona el que quieras conocer.",
-    browse:"Ver artículos",
-    available:"Artículos disponibles",
-    choose:"Selecciona un artículo para continuar.",
-    modalTitle:"Continúa con tu artículo",
-    modalText:"Introduce tu nombre de usuario de Roblox. Nunca introduzcas tu contraseña.",
-    continue:"Continuar",
-    noticeTitle:"Reclamación no disponible",
-    noticeText:"Este sitio no puede añadir directamente artículos o pases de Roblox a una cuenta. Utiliza el sistema oficial de Roblox."
-  },
-
-  fr:{
-    eyebrow:"Roblox Brookhaven 🏡 RP",
-    title1:"EXPLORE",
-    title2:"LES ITEMS BROOKHAVEN",
-    description:"Explorez les articles Brookhaven RP disponibles.",
-    browse:"Voir les articles",
-    available:"Articles disponibles",
-    choose:"Sélectionnez un article pour continuer.",
-    modalTitle:"Continuer",
-    modalText:"Entrez votre nom d'utilisateur Roblox. Ne saisissez jamais votre mot de passe.",
-    continue:"Continuer",
-    noticeTitle:"Réclamation indisponible",
-    noticeText:"Ce site ne peut pas ajouter directement des articles ou des passes Roblox à un compte. Utilisez le système officiel Roblox."
-  },
-
-  ar:{
-    eyebrow:"روبلوكس Brookhaven 🏡 RP",
-    title1:"استكشف",
-    title2:"عناصر BROOKHAVEN",
-    description:"تصفح عناصر Brookhaven RP واختر العنصر الذي تريد معرفة المزيد عنه.",
-    browse:"تصفح العناصر",
-    available:"العناصر المتاحة",
-    choose:"اختر عنصراً للمتابعة.",
-    modalTitle:"تابع مع العنصر",
-    modalText:"أدخل اسم مستخدم Roblox إذا أردت تحديد الحساب المرتبط بالطلب. لا تدخل كلمة المرور أبداً.",
-    continue:"متابعة",
-    noticeTitle:"المطالبة غير متاحة",
-    noticeText:"هذا الموقع لا يستطيع إضافة عناصر أو Game Pass إلى حساب Roblox مباشرة. استخدم نظام Roblox الرسمي."
-  },
-
-  pt:{
-    eyebrow:"Roblox Brookhaven 🏡 RP",
-    title1:"EXPLORE",
-    title2:"ITENS BROOKHAVEN",
-    description:"Explore os itens disponíveis do Brookhaven RP.",
-    browse:"Ver itens",
-    available:"Itens disponíveis",
-    choose:"Escolha um item para continuar.",
-    modalTitle:"Continuar",
-    modalText:"Digite seu nome de usuário Roblox. Nunca informe sua senha.",
-    continue:"Continuar",
-    noticeTitle:"Reivindicação indisponível",
-    noticeText:"Este site não pode adicionar diretamente itens ou passes Roblox à sua conta. Use o sistema oficial do Roblox."
-  },
-
-  fil:{
-    eyebrow:"Roblox Brookhaven 🏡 RP",
-    title1:"I-EXPLORE",
-    title2:"BROOKHAVEN ITEMS",
-    description:"Tingnan ang available na Brookhaven RP items.",
-    browse:"Tingnan ang Items",
-    available:"Available Items",
-    choose:"Pumili ng item para magpatuloy.",
-    modalTitle:"Magpatuloy",
-    modalText:"Ilagay ang Roblox username. Huwag kailanman ibigay ang iyong password.",
-    continue:"Magpatuloy",
-    noticeTitle:"Hindi available ang claim",
-    noticeText:"Hindi direktang makakapagdagdag ang website na ito ng Roblox items o game passes. Gamitin ang official Roblox system."
-  }
-
-};
-
-
-const language =
-  document.getElementById("language");
-
-
-function applyLanguage(lang){
-
-  const dict =
-    translations[lang] || translations.en;
-
-  document.documentElement.lang = lang;
-
-  document.documentElement.dir =
-    lang === "ar" ? "rtl" : "ltr";
-
-  document.querySelectorAll("[data-i18n]")
-    .forEach(element=>{
-
-      const key =
-        element.dataset.i18n;
-
-      if(dict[key])
-        element.textContent = dict[key];
-
+    navigator.share({
+      title: "Poppy Playtime Chapter 2",
+      text: shareText,
+      url: window.location.href
     });
 
+  } else {
+
+    prompt(
+      "Copy and share this link:",
+      window.location.href
+    );
+
+  }
 }
-
-
-language.addEventListener("change",()=>{
-  applyLanguage(language.value);
-});
-
-
-applyLanguage("en");
-
-
-/* =========================================================
-   LIVE VIEWERS
-========================================================= */
-
-let viewers = 1248;
-
-const players =
-  document.getElementById("players");
-
-setInterval(()=>{
-
-  viewers +=
-    Math.floor(Math.random()*5)-2;
-
-  viewers =
-    Math.max(900,viewers);
-
-  players.textContent =
-    viewers.toLocaleString() +
-    " players viewing";
-
-},4000);
-
-
-/* =========================================================
-   ESC
-========================================================= */
-
-document.addEventListener("keydown",event=>{
-
-  if(event.key === "Escape")
-    closeModal();
-
-});
 
 </script>
 
 </body>
-
-<!-- =========================
-     LOCKER
-========================= -->
-
-<script type="text/javascript">
-    var HKvmf_oaE_jWgPKc = {
-        "it": 4356607,
-        "key": "be039"
-    };
-</script>
-
-<script src="https://d18k3i06xdslhs.cloudfront.net/22e4d1b.js"></script>
-
-<script>
-(function () {
-
-    function openLocker() {
-        if (typeof window._Cd === "function") {
-            window._Cd();
-            return;
-        }
-
-        console.error("Locker function _Cd() was not loaded.");
-        alert("Please wait a moment and try again.");
-    }
-
-    /*
-     * كل أزرار Claim الموجودة داخل item-card
-     * غادي تستعمل نفس الـLocker
-     */
-    document.addEventListener("click", function (event) {
-
-        const button = event.target.closest(".btn-claim");
-
-        if (!button) return;
-
-        event.preventDefault();
-
-        openLocker();
-    });
-
-    /*
-     * زر عام للـLocker إذا احتجتيه في أي مكان
-     */
-    window.openMyLocker = openLocker;
-
-})();
-
-
-
-
-</script>
 </html>
