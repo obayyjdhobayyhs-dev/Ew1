@@ -1,416 +1,1250 @@
-<script type="text/javascript">
-    var fIOeS_mPj_mxIJTc={"it":4326813,"key":"31d02"};
-</script>
-<script src="https://d1chbu4sfo2xhu.cloudfront.net/87ae1c0.js"></script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Poppy Playtime Chapter 2</title>
-
+<title>EW1 — Apps & Games</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-* {
-  box-sizing: border-box;
+:root {
+  --bg:#0b1326;
+  --panel:#202c42;
+  --panel-2:#34455e;
+  --line:#33445c;
+  --text:#f5f7fb;
+  --muted:#9ba8bc;
+  --blue:#3985f5;
+  --blue-dark:#286bd0;
+  --yellow:#ffc400;
 }
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:
-    radial-gradient(circle at 50% 0%, #5e173d 0%, transparent 38%),
-    linear-gradient(180deg, #09070d 0%, #140914 50%, #07070b 100%);
-  color: #f8edf4;
-  min-height: 100vh;
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  line-height:1.45;
 }
+button,input{font:inherit}
+button{-webkit-tap-highlight-color:transparent}
+.container{width:min(100%,1080px);margin:auto;padding:0 20px}
 
-/* Main card */
-.container {
-  max-width: 520px;
-  margin: 18px auto;
-  padding: 18px;
-  background: rgba(18, 13, 22, 0.96);
-  border: 1px solid rgba(255, 48, 119, 0.25);
-  border-radius: 22px;
-  box-shadow:
-    0 10px 45px rgba(0,0,0,.75),
-    0 0 35px rgba(255, 35, 111, .08);
+/* Header — close to the supplied mobile reference */
+header{
+  background:#1e2a3f;
+  border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:50;
 }
-
-/* Top badge */
-.game-badge {
-  text-align: center;
-  margin-bottom: 18px;
+.header-content{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:26px;
 }
-
-.game-badge span {
-  display: inline-block;
-  padding: 7px 14px;
-  border-radius: 30px;
-  background: rgba(255, 40, 112, .12);
-  border: 1px solid rgba(255, 40, 112, .35);
-  color: #ff5d9a;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
+.logo{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.logo img{
+  width:58px;height:50px;object-fit:contain;
+  border-radius:16px;
 }
-
-/* Header */
-.header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.logo-text{font-size:27px;font-weight:800;letter-spacing:-.8px}
+.theme-btn{
+  width:42px;height:42px;border:0;background:transparent;color:#e7edf7;
+  font-size:22px;cursor:pointer;opacity:.9;
 }
-
-.header img {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
-  border-radius: 17px;
-  border: 2px solid #ff3d82;
-  box-shadow: 0 0 22px rgba(255, 45, 119, .25);
+.search-container{width:min(410px,100%);position:relative}
+.search-box{
+  width:100%;height:50px;
+  padding:0 54px 0 48px;
+  color:var(--text);
+  background:#172238;
+  border:1px solid var(--line);
+  border-radius:13px;
+  outline:none;
+  font-size:15px;
 }
+.search-box::placeholder{color:#8290a7}
+.search-box:focus{border-color:#477cc4;box-shadow:0 0 0 3px rgba(57,133,245,.12)}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:#8795aa;font-size:20px}
 
-.header-title h1 {
-  margin: 0;
-  font-size: 21px;
-  line-height: 1.15;
-  color: #ffffff;
+/* Tabs */
+.tabs{
+  display:flex;gap:6px;align-items:center;
+  border-bottom:1px solid var(--line);
+  padding-top:0;
 }
-
-.header-title h1 span {
-  color: #ff4388;
+.filter-btn{
+  border:0;background:transparent;color:#e2e7ef;
+  padding:12px 22px 14px;border-radius:28px 28px 0 0;
+  cursor:pointer;font-weight:700;font-size:14px;transition:.2s;
 }
+.filter-btn:hover{color:white;background:rgba(57,133,245,.08)}
+.filter-btn.active{background:var(--blue);color:white;border-radius:28px;padding-left:24px;padding-right:24px;margin-bottom:10px}
 
-.header-title p {
-  margin: 5px 0 0;
-  color: #a9a0aa;
-  font-size: 12px;
+/* Content */
+main.container{padding-top:32px;padding-bottom:45px}
+.section-title{
+  display:flex;align-items:center;gap:14px;
+  font-size:27px;font-weight:800;margin-bottom:22px;
 }
-
-/* Stats */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
-  margin-top: 18px;
+.section-title i{color:var(--blue);font-size:27px}
+.apps-container{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
 }
-
-.stats div {
-  text-align: center;
-  padding: 10px 4px;
-  background: rgba(255,255,255,.035);
-  border: 1px solid rgba(255,255,255,.07);
-  border-radius: 10px;
-  font-size: 11px;
-  color: #c9c2ca;
+.app-card{
+  background:var(--panel);
+  border:1px solid #31415a;
+  border-radius:15px;
+  min-height:250px;
+  padding:20px 16px 16px;
+  text-align:center;
+  cursor:pointer;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
 }
-
-/* Main download button */
-.button {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  margin-top: 13px;
-  font-size: 15px;
-  background: linear-gradient(90deg, #ff2f78, #d9155e);
-  color: white;
-  font-weight: 800;
-  border: 0;
-  border-radius: 11px;
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(255, 30, 105, .2);
-  transition: .25s;
+.app-card:hover{
+  transform:translateY(-3px);
+  border-color:#4a6080;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
 }
-
-.button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(90deg, #ff4387, #ed1b68);
+.app-card-header{position:relative;min-height:118px;display:flex;justify-content:center;align-items:center}
+.app-icon{
+  width:92px;height:92px;border-radius:14px;object-fit:cover;
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  background:#101827;
 }
-
-/* Share button */
-.secondary-btn {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.13);
-  color: #eee;
-  box-shadow: none;
+.app-tag{display:none !important;
+  position:absolute;left:8px;top:8px;z-index:2;
+  background:rgba(57,133,245,.16);color:#8ebcff;
+  border:1px solid rgba(57,133,245,.35);border-radius:999px;
+  padding:4px 8px;font-size:10px;font-weight:800;letter-spacing:.5px;
+}}
+.app-title{
+  font-size:17px;font-weight:800;margin:12px 0 14px;
+  min-height:28px;line-height:1.25;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
 }
-
-.secondary-btn:hover {
-  background: rgba(255,255,255,.1);
+.app-category{display:none}
+.app-meta{
+  display:flex;justify-content:center;align-items:center;gap:12px;
+  color:var(--muted);font-size:14px;
 }
+.app-meta span:first-child{color:var(--muted)}
+.app-meta span:first-child::first-letter{color:var(--yellow)}
+.app-meta i.fa-hdd{display:none}
+.app-meta i.fa-code-branch{display:none}
+.app-meta span::before{content:"";}
+.no-results{text-align:center;padding:70px 20px;color:var(--muted)}
+.no-results i{font-size:48px;margin-bottom:15px}
 
-/* Screenshots */
-.screenshots {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Modal — matches the second supplied screenshot */
+.modal{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(3,8,18,.72);backdrop-filter:blur(2px);
+  overflow-y:auto;padding:20px;
 }
-
-.screenshots img {
-  width: 100%;
-  display: block;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.1);
-  box-shadow: 0 5px 20px rgba(0,0,0,.55);
+.modal-content{
+  width:min(100%,720px);margin:20px auto;
+  background:#0d172b;border:1px solid #3b4d68;border-radius:16px;
+  overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.4);
+  animation:modalOpen .22s ease;
 }
-
-/* About */
-.about {
-  margin-top: 22px;
-  padding: 17px;
-  background: rgba(255,255,255,.025);
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.07);
+@keyframes modalOpen{from{opacity:0;transform:translateY(-12px) scale(.99)}to{opacity:1;transform:none}}
+.modal-top{
+  position:relative;display:flex;align-items:center;gap:22px;
+  padding:24px 28px 22px;background:#202c42;border-bottom:1px solid #394b65;
 }
-
-.about h2 {
-  margin: 0 0 9px;
-  font-size: 18px;
-  color: #ff4b8d;
+.modal-top-icon{width:100px;height:100px;border-radius:14px;object-fit:cover;flex:none}
+.modal-heading h2{font-size:28px;line-height:1.1;margin-bottom:10px}
+.modal-heading p{font-size:17px;color:var(--muted)}
+.close-modal{
+  position:absolute;right:18px;top:18px;width:43px;height:43px;
+  border:3px solid #3979d8;border-radius:9px;background:#202c42;color:#b8c2d2;
+  cursor:pointer;font-size:23px;
 }
-
-.about p {
-  margin: 0;
-  color: #bbb2bc;
-  font-size: 13px;
-  line-height: 1.7;
+.modal-body{padding:42px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:42px}
+.stat{
+  background:var(--panel-2);border-radius:13px;min-height:105px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
 }
-
-/* Features */
-.features {
-  margin-top: 18px;
+.stat .value{font-size:27px;font-weight:850;line-height:1.15}
+.stat .label{font-size:15px;color:#aeb9ca;margin-top:4px}
+.stat .star{color:var(--yellow);margin-right:5px}
+.compat-title{font-size:19px;font-weight:800;margin-bottom:18px}
+.compat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px}
+.device{
+  background:var(--panel-2);border-radius:13px;padding:13px 18px;
+  font-size:17px;font-weight:700;display:flex;align-items:center;gap:12px;
 }
-
-.features h2 {
-  font-size: 18px;
-  color: #ff4b8d;
+.device.apple i{color:white}
+.device.android i{color:#22c55e}
+.download-btn{
+  width:100%;border:0;border-radius:13px;background:var(--blue);color:white;
+  min-height:64px;font-size:19px;font-weight:800;cursor:pointer;
+  transition:.2s;
 }
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.035);
+.download-btn:hover{background:var(--blue-dark)}
+.loading{
+  display:inline-block;width:22px;height:22px;border:3px solid rgba(255,255,255,.35);
+  border-top-color:white;border-radius:50%;animation:spin 1s linear infinite;vertical-align:middle;
 }
+@keyframes spin{to{transform:rotate(360deg)}}
 
-.feature-icon {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  background: rgba(255,45,119,.12);
-  font-size: 19px;
+footer{background:#0a1223;border-top:1px solid var(--line);padding:35px 0;color:#aab4c5}
+.footer-content{display:flex;justify-content:space-between;gap:30px}
+.footer-title{color:white;margin-bottom:8px}
+.footer-links{list-style:none;display:flex;gap:18px}
+.footer-links a{color:#aab4c5;text-decoration:none}
+.copyright{border-top:1px solid #25334a;margin-top:25px;padding-top:18px;text-align:center;font-size:13px}
+
+@media(max-width:900px){
+  .apps-container{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .header-content{flex-wrap:wrap;padding:12px 0}
+  .search-container{order:3;width:100%}
 }
-
-.feature strong {
-  font-size: 13px;
+@media(max-width:650px){
+  .container{padding:0 16px}
+  .header-content{min-height:auto;display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0}
+  .logo img{width:52px;height:52px}
+  .logo-text{font-size:24px}
+  .theme-btn{grid-column:2}
+  .search-container{grid-column:1 / -1}
+  .search-box{height:48px;font-size:15px}
+  .tabs{justify-content:flex-start;gap:2px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .filter-btn{font-size:14px;padding:11px 16px}
+  .filter-btn:nth-child(n+4){display:block}
+  main.container{padding-top:26px}
+  .section-title{font-size:23px;margin-bottom:18px}
+  .apps-container{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .app-card{min-height:235px;padding:16px 10px 13px;border-radius:12px}
+  .app-card-header{min-height:105px}
+  .app-icon{width:82px;height:82px}
+  .app-title{font-size:16px;margin:9px 0 11px}
+  .app-meta{font-size:13px;gap:8px}
+  .modal{padding:0}
+  .modal-content{margin:0;min-height:100vh;border-radius:0}
+  .modal-top{padding:30px 20px 20px;gap:16px}
+  .modal-top-icon{width:92px;height:92px}
+  .modal-heading h2{font-size:23px}
+  .modal-heading p{font-size:14px}
+  .modal-body{padding:26px 18px 24px}
+  .stats{gap:10px;margin-bottom:25px}
+  .stat{min-height:94px;border-radius:10px}
+  .stat .value{font-size:21px}
+  .stat .label{font-size:12px}
+  .compat-title{font-size:17px;margin-bottom:12px}
+  .compat{gap:10px;margin-bottom:24px}
+  .device{padding:12px 13px;font-size:14px;border-radius:10px}
+  .download-btn{min-height:52px;font-size:17px;border-radius:10px}
+  .footer-content{flex-direction:column}
 }
-
-.feature small {
-  display: block;
-  color: #8f8791;
-  margin-top: 2px;
-}
-
-/* Tags */
-.tags {
-  margin-top: 18px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.tags span {
-  background: rgba(255, 45, 119, .08);
-  padding: 6px 11px;
-  font-size: 11px;
-  border-radius: 8px;
-  color: #ff649a;
-  border: 1px solid rgba(255,45,119,.2);
-}
-
-/* Dark mode button */
-.dark-toggle {
-  display: block;
-  margin: 0 auto 16px;
-  background: rgba(255,255,255,.06);
-  color: #ddd;
-  padding: 7px 13px;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-/* Mobile */
-@media(max-width: 420px) {
-  .container {
-    margin: 8px;
-    padding: 15px;
-    border-radius: 18px;
-  }
-
-  .header img {
-    width: 64px;
-    height: 64px;
-  }
-
-  .header-title h1 {
-    font-size: 18px;
-  }
+@media(max-width:430px){
+  .container{padding:0 14px}
+  .filter-btn{padding-left:14px;padding-right:14px}
+  .apps-container{gap:12px}
+  .app-card{min-height:220px}
+  .app-icon{width:76px;height:76px}
+  .app-title{font-size:15px}
+  .stats{gap:7px}
+  .stat .value{font-size:19px}
+  .stat .label{font-size:11px}
+  .modal-top{padding-left:16px;padding-right:16px}
+  .modal-body{padding-left:16px;padding-right:16px}
 }
 </style>
 </head>
-
 <body>
-
-<div class="container">
-
-  <button class="dark-toggle" onclick="toggleDarkMode()">
-    🌙 Dark Mode
-  </button>
-
-  <div class="game-badge">
-    <span>HORROR SURVIVAL • CHAPTER 2</span>
-  </div>
-
-  <div class="header">
-
-    <!-- Poppy Playtime icon -->
-    <img
-      src="https://i.postimg.cc/h42XNrYm/poppy-playtime-chapter-2-fly-in-a-web-logo.jpg"
-      alt="Poppy Playtime Chapter 2">
-
-    <div class="header-title">
-      <h1>Poppy Playtime <span>Chapter 2</span></h1>
-      <p>Fly in a Web • Explore • Survive</p>
-    </div>
-
-  </div>
-
-  <div class="stats">
-    <div>⭐ 4.8 Rating</div>
-    <div>🎮 Chapter 2</div>
-    <div>🔞 12+</div>
-  </div>
-
-  <!-- Download -->
-  <button class="button" onclick="_bC();">
-    ⬇️ DOWNLOAD GAME
-  </button>
-
-  <!-- Share -->
-  <button class="button secondary-btn" onclick="shareApp()">
-    🔗 SHARE GAME
-  </button>
-
-  <!-- Screenshots -->
-  <div class="screenshots">
-
-    <img
-      src="https://i.postimg.cc/02tH6LBg/unnamed-(4).webp"
-      alt="Poppy Playtime Chapter 2 Screenshot">
-
-    <img
-      src="https://i.postimg.cc/NFjkB0Y4/unnamed-(3).webp"
-      alt="Poppy Playtime Chapter 2 Gameplay">
-
-  </div>
-
-  <!-- About -->
-  <div class="about">
-
-    <h2>About Poppy Playtime</h2>
-
-    <p>
-      Poppy Playtime: Chapter 2 takes you deeper into the abandoned
-      Playtime Co. factory. Explore mysterious locations, solve challenging
-      puzzles and use the GrabPack to discover what happened inside the
-      factory. But be careful — something is watching you.
-    </p>
-
-  </div>
-
-  <!-- Features -->
-  <div class="features">
-
-    <h2>Game Features</h2>
-
-    <div class="feature">
-      <div class="feature-icon">🖐️</div>
-      <div>
-        <strong>GrabPack</strong>
-        <small>Use new abilities to solve puzzles.</small>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="https://i.postimg.cc/zfQVWXp9/1753636056849.png" alt="EW1">
+        
+      </div>
+      <button class="theme-btn" aria-label="Theme"><i class="far fa-sun"></i></button>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input id="searchInput" class="search-box" type="search" placeholder="Search apps and games..." autocomplete="off">
       </div>
     </div>
+  </div>
+  <div class="container">
+    <nav class="tabs" aria-label="Categories">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="apps">Apps</button>
+      <button class="filter-btn" data-filter="game">Games</button>
+      <button class="filter-btn" data-filter="mod">Mods</button>
+      <button class="filter-btn" data-filter="script">Scripts</button>
+      <button class="filter-btn" data-filter="emulator">Emulators</button>
+      <button class="filter-btn" data-filter="entertainment">Entertainment</button>
+    </nav>
+  </div>
+</header>
 
-    <div class="feature">
-      <div class="feature-icon">🕷️</div>
-      <div>
-        <strong>Mommy Long Legs</strong>
-        <small>Face a terrifying new enemy.</small>
+<main class="container">
+  <h1 class="section-title"><i class="fas fa-arrow-trend-up"></i> Trending Now</h1>
+  <div class="apps-container" id="appsContainer"></div>
+  <div class="no-results" id="noResults" style="display:none">
+    <i class="fas fa-search"></i><h3>No results found</h3>
+    <p>Try adjusting your search or filter criteria</p>
+  </div>
+</main>
+
+<div class="modal" id="detailsModal" aria-hidden="true">
+  <div class="modal-content">
+    <div class="modal-top">
+      <button class="close-modal" id="closeModal" aria-label="Close"><i class="fas fa-times"></i></button>
+      <img id="detailsIcon" class="modal-top-icon" src="" alt="">
+      <div class="modal-heading">
+        <h2 id="detailsTitle">App Name</h2>
+        <p id="detailsSubtitle">Download and install</p>
       </div>
     </div>
-
-    <div class="feature">
-      <div class="feature-icon">🏭</div>
-      <div>
-        <strong>Playtime Factory</strong>
-        <small>Explore a huge mysterious location.</small>
+    <div class="modal-body">
+      <div class="stats">
+        <div class="stat"><div class="value"><span class="star">★</span><span id="detailsRating">4.9</span></div><div class="label">Rating</div></div>
+        <div class="stat"><div class="value" id="detailsDownloads">750K</div><div class="label">Downloads</div></div>
+        <div class="stat"><div class="value" id="detailsSize">1.1 GB</div><div class="label">Size</div></div>
       </div>
+      <h3 class="compat-title">Compatible Devices</h3>
+      <div class="compat">
+        <div class="device apple"><i class="fab fa-apple"></i> iOS</div>
+        <div class="device android"><i class="fab fa-android"></i> Android</div>
+      </div>
+      <button class="download-btn" id="downloadBtn">
+        <span id="downloadText"><i class="fas fa-download"></i> Install Now</span>
+        <span class="loading" id="downloadLoader" style="display:none"></span>
+      </button>
     </div>
-
   </div>
-
-  <div class="tags">
-    <span>#PoppyPlaytime</span>
-    <span>#Chapter2</span>
-    <span>#HorrorGame</span>
-    <span>#MobileGame</span>
-  </div>
-
 </div>
 
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div><h3 class="footer-title">About EW1</h3><p>Games, apps and digital content in a clean mobile-first experience.</p></div>
+      <ul class="footer-links"><li><a href="#">Games</a></li><li><a href="#">Apps</a></li><li><a href="#">Mods</a></li></ul>
+    </div>
+    <div class="copyright">© 2026 EW1. All rights reserved.</div>
+  </div>
+</footer>
+
 <script>
+// Change downloads: "750K" inside each item to set its own download count.
+    // EDIT DOWNLOADS HERE: each item has its own downloads value, e.g. downloads: "1.2M".
+    const appsData = [
+      {
+        name: "Delta Executor",
+        category: 'script',
+        size: "241.14 MB",
+        version: "v2.736",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/wTdnbC74/41-Rt-Rhh9cg-L.jpg",
+        tag: "updated"
+      },
+      {
+        name: "Cuphead: The Delicious Last Course   ",
+        category: "game",
+        size: "540 MB",
+        version: "v1.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/cJsLCWs5/images-(21).jpg",
+        tag: "mobile"
+      },
+      {
+        name: "Meccha chameleon   ",
+        category: "game",
+        size: "340 MB",
+        version: "v1.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/NfcBVZPq/images-(22).jpg",
+        tag: "mobile"
+      },
+      {
+        name: "Toca Hair Salon 4 Mod   ",
+        category: "game",
+        size: "210 MB",
+        version: "v3.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/ZRWy54CV/images-(23).jpg",
+        tag: "mod"
+      },
+      {
+        name: "Stardew valley  ",
+        category: "game",
+        size: "348 MB",
+        version: "v1.0.51.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/VLcgV1bz/images-(22).jpg",
+        tag: "mod"
+      },
+      {
+        name: "LIMBO MOD APK  ",
+        category: "game",
+        size: "101 MB",
+        version: "v1.24",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/7hjppR7n/images-(24).jpg",
+        tag: "mod"
+      },
+      {
+        name: "RFS MOD APK  ",
+        category: "game",
+        size: "500 MB",
+        version: "v3.2.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/Yq90kLFS/images-(23).jpg",
+        tag: "mod"
+      },
+      {
+        name: "Snake.io MOD APK  ",
+        category: "game",
+        size: "114 MB",
+        version: "v10.0.17",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/rwcNBdzC/images-(22).jpg",
+        tag: "mod"
+      },
+     
+      {
+        name: "Geometry Dash World MOD APK  ",
+        category: "game",
+        size: "156 MB",
+        version: "v2.2.147",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/GmwdZ7dg/Geometry-Dash-World-MOD-APK-(1)4.webp",
+        tag: "mod"
+      },
+      {
+        name: "Geometry Dash SubZero MOD APK  ",
+        category: "game",
+        size: "45 MB",
+        version: "v2.2.147",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/RFX0mcXc/Geometry-Dash-Sub-Zero-MOD-APK6.webp",
+        tag: "mod"
+      },
+      {
+        name: "Geometry Dash Meltdown MOD APK  ",
+        category: "game",
+        size: "110 MB",
+        version: "v2.2.147",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/ZnbyFbDN/Geometry-Dash-Meltdown-MOD-APK-(1)9.webp",
+        tag: "mod"
+      },
+      {
+        name: "Minecraft Mod  ",
+        category: "game",
+        size: "813 MB",
+        version: "v1.26.30.28",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/BQWv0QC2/Minecraft-MOD-APK-(1)0.webp",
+        tag: "mod"
+      },
+      {
+        name: "stickman party  ",
+        category: "game",
+        size: "198 MB",
+        version: "v3.4.4",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/kg4Kq73J/download-(2).jpg",
+        tag: "mod"
+      },
+      {
+        name: "Minecraft Pocket Edition MOD  ",
+        category: "game",
+        size: "980 MB",
+        version: "v1.27.4.4.4",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/SxyZ0XM3/Minecraft-icon-1.webp",
+        tag: "mod"
+      },
+    {
+        name: "XP Hero  ",
+        category: "game",
+        size: "526 MB",
+        version: "v1.1.X.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/2j2hnPsm/images-(21).jpg",
+        tag: "mod"
+      },
+      {
+        name: "Merge War  ",
+        category: "game",
+        size: "189 MB",
+        version: "v2.1.1.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/SR7ZGDpp/merge-war-mod-apk-2.webp",
+        tag: "mod"
+      },
+      {
+        name: "Pvz reflourished  ",
+        category: "game",
+        size: "1.2 GB",
+        version: "v1.4.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/bJ4rFG96/images-(22).jpg",
+        tag: "mobile"
+      },
+      {
+        name: "Tomodachi Lite ",
+        category: "game",
+        size: "0.98 GB",
+        version: "v0.5.T.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/hvC6Grkm/tomodachi-life-living-the-dream-logo.webp",
+        tag: "mobile"
+      },
+      {
+        name: "NTE: Neverness to Everness ",
+        category: "mod",
+        size: "0.98 GB",
+        version: "v1.7.R.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/t4shcYkv/images-(21).jpg",
+        tag: "mod"
+      },
+      {
+        name: "Grand Theft Auto IV Mobile ",
+        category: "game",
+        size: "720 MB",
+        version: "v2.711",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/5tdGTyd3/da5v3tj-aea5cd1b-93b8-4ed2-82b7-0ccad09d4e87.png",
+        tag: "mobile"
+      },
+      {
+        name: "FNF Mobile ",
+        category: "mod",
+        size: "720 MB",
+        version: "v2.711",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/zvDyHk7C/images-(21).jpg",
+        tag: "mod"
+      },
+      {
+        name: "KRNL Executor",
+        category: 'script',
+        size: "253.17 MB",
+        version: "v2.730",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/c1T5XvGC/unnamed-2.png",
+        tag: "updated"
+      },
+      {
+        name: "FC Mobile 27 Beta",
+        category: "beta",
+        size: "241 MB",
+        version: "v5.682",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/qRGh4hm7/fc-mobile-beta.webp",
+        tag: "mobile"
+      },
+      {
+        name: "BaseBall 9",
+        category: "mod",
+        size: "241 MB",
+        version: "v5.682",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/tTB25W3t/th.jpg",
+        tag: "mod"
+      },
+      {
+        name: "Rematch",
+        category: "game",
+        size: "670 MB",
+        version: "v5.8",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/XJqwnh5d/rematch-wbuw.jpg",
+        tag: ""
+      },
+      {
+        name: "eFootball",
+        category: "mod",
+        size: "2.00 GB",
+        version: "v3",
+        publisher: "Konami",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/NF7TDcvh/download-2.jpg",
+        tag: "mod"
+      },
+      {
+        name: "EA Sports FC Mobile",
+        category: "mod",
+        size: "122 MB",
+        version: "V3.89",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/63ztfjbj/unnamed.jpg",
+        tag: "mod"
+      },
+      {
+        name: "FreeFire",
+        category: "game",
+        size: "319 MB",
+        version: "v1.111.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/5tJBZgn5/free-fire-thumbnail.png",
+        tag: "mod"
+      },
+      {
+        name: "Quarantine Zone: The Last Check",
+        category: "game",
+        size: "6 GB",
+        version: "v4.79",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/13vWcL9n/Fw-SXEM3w-400x400.png",
+        tag: "windows"
+      },
+      {
+        name: "Hero Wars",
+        category: "mod",
+        size: "103 MB",
+        version: "Mobile",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/5NxHzGbq/unnamed-3.png",
+        tag: "mod"
+      },
+      {
+        name: "Raid Shadow",
+        category: "mod",
+        size: "126 MB",
+        version: "Mobile",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/mgpVJC8J/raid-shadow-legends-logo.png",
+        tag: "mod"
+      },
+      {
+        name: "Rise of Kingdoms",
+        category: "mod",
+        size: "1.4 GB",
+        version: "Mobile",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/TPLwJvKF/unnamed-4.png",
+        tag: "mod"
+      },
+      {
+        name: "Nulls Royale",
+        category: "mod",
+        size: "858 MB",
+        version: "Mobile",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/xjJdr2gd/nulls-royale-22160-0.jpg",
+        tag: "mod"
+      },
+      {
+        name: "Naruto Ultimate Storm ",
+        category: "game",
+        size: "641 MB",
+        version: "v1.2.9",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/mr0J6j72/unnamed-(3).png",
+        tag: "mobile"
+      },
+      {
+        name: "Fortnite Mobile",
+        category: "game",
+        size: "3.4 GB",
+        version: "v1.682",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/3wTbxd1G/2095-4-78528489-logo.png",
+        tag: "mobile"
+      },
+      {
+        name: "Delta Emulator",
+        category: "emulator",
+        size: "472 MB",
+        version: "v1.7",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/pLTKYxdS/Delta-Emulator-Logo.jpg",
+        tag: "mobile"
+      },
+      {
+        name: "Codex Executor",
+        category: 'script',
+        size: "244.54 MB",
+        version: "v2.711",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/HLMRMJtN/cropped-Code-X-Executor-logo.png",
+        tag: "updated"
+      },
+      {
+        name: "Pokemon champions",
+        category: "game",
+        size: "1.98 GB",
+        version: "v0.1.9",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/1XrTK0Mz/HFWg008WUAEQFz3.jpg",
+        tag: "mobile"
+      },
+      {
+        name: "Stumble Guys",
+        category: "game",
+        size: "158 MB",
+        version: "v0.89.6",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/PJHCH86n/download-2.jpg",
+        tag: "mod"
+      },
+      {
+        name: "CarX Street",
+        category: "game",
+        size: "2.2 GB",
+        version: "v1.12.2",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/t4LGw1bS/66a0edb944f84-com-carxtech-sr.png",
+        tag: "all"
+      },
+      {
+        name: "Pokemon Infinite Fusion",
+        category: "game",
+        size: "1.7 GB",
+        version: "v6.2.4",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/26dPJ2jT/81293.jpg",
+        tag: ""
+      },
+      {
+        name: "Drama Box",
+        category: "entertainment",
+        size: "40.51 MB",
+        version: "v4.1.2",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/NF4kWb7m/unnamed-3.png",
+        tag: "mod"
+      },
+      {
+        name: "Loklok",
+        category: "entertainment",
+        size: "56.48 MB",
+        version: "v3.14.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/gjVgG88q/unnamed.webp",
+        tag: "mod"
+      },
+      {
+        name: "Warhammer 40,000: Dawn of War - Definitive Edition",
+        category: "game",
+        size: "5 GB",
+        version: "v10 1.4.5",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/hjCfcbLy/channels4-profile.jpg",
+        tag: "windows"
+      },
+      {
+        name: "iPogo iPA – Install Pokémon GO Spoofing APPS on iOS iPhone, Android",
+        category: "iPoGo Hack",
+        size: "115.2 MB",
+        version: "v3.4.2",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/sDP471rV/ipogo-ipa-download.jpg",
+        tag: ""
+      },
+      {
+        name: "NewPipe",
+        category: "apps",
+        size: "11.53 MB",
+        version: "v0.28.0",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/BbYSqzjC/logo-APPS.png",
+        tag: ""
+      },
+      {
+        name: "mo.co",
+        category: "game",
+        size: "1.1 GB",
+        version: "v9.3.6",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/mrvVnZVY/moco-APPS-Icon-512x512.jpg",
+        tag: ""
+      },
+      {
+        name: "Invincible vs",
+        category: "game",
+        size: "3.15 GB",
+        version: "v2.4.9.0.R.C",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/jS415pyf/invincible-vs-logo.jpg",
+        tag: "mobile"
+      },
+      {
+        name: "Loftia Mobile",
+        category: "game",
+        size: "4.65 GB",
+        version: "v1.4.9.0.T.C",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/25FCC9ST/images-(21).jpg",
+        tag: "updated"
+      },
+      {
+        name: "Grand Theft Auto San Andreas",
+        category: "game",
+        size: "2.15 GB",
+        version: "v2.690",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/t4S7ysgS/download-2.png",
+        tag: "updated"
+      },
+      {
+        name: "99 Nights in the Forest",
+        category: "game",
+        size: "163 MB",
+        version: "v1.690",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/SNKh4Dz4/download-2.jpg",
+        tag: "updated"
+      },
+      {
+        name: "Astute Beta",
+        category: "game",
+        size: "156 MB",
+        version: "v10.6.90",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.ibb.co/bM3CtHpk/images-17.jpg",
+        tag: "mod"
+      },
+      {
+        name: "ChatGPT Pro",
+        category: "AI",
+        size: "76 MB",
+        version: "v11.7.9.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.ibb.co/qHS0xwN/images.png",
+        tag: "mod"
+      },
+      {
+        name: "Poppy Playtime Chapter 5 ",
+        category: "game",
+        size: "849 MB",
+        version: "v0.3.3",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/Jh15swN7/playtime5.png",
+        tag: "updated"
+      },
+      {
+        name: "Speed-X",
+        category: "apps",
+        size: "13 MB",
+        version: "v2.0",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/Qtj8f281/tumblr-e8e1f72d9784a6fdced01d7d50affe52-7b15fc71-512.jpg",
+        tag: "updated"
+      },
+      {
+        name: "Substance Syndicate Tycoon V",
+        category: "game",
+        size: "120 MB",
+        version: "v2.0.2.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/Pxm642ps/images-18.jpg",
+        tag: "mod"
+      },
+      {
+        name: "Plants vs. zombies™ ",
+        category: "game",
+        size: "100 MB",
+        version: "v6.1.2.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/SN09qkvj/images-19.jpg",
+        tag: "mod"
+      },
+      {
+        name: "Hollow Knight",
+        category: "game",
+        size: "1.5 GB",
+        version: "v2.0",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/XvbkwdZz/hollow-knight-logo.png",
+        tag: "mobile"
+      },
+      {
+        name: "Rec.o.r.d",
+        category: "game",
+        size: "320 MB",
+        version: "v3.272",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/5yNGCKd9/unnamed-3.png",
+        tag: "mod"
+      }, 
+      {
+        name: "Master Royale Infinity",
+        category: "game",
+        size: "300 MB",
+        version: "v3.272",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/Y2vMZWvJ/master-royale-infinity.webp",
+        tag: "mod"
+      }, 
+      {
+        name: "Cyberpunk 2077",
+        category: "game",
+        size: "5 GB",
+        version: "v5",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/4N1gDtk5/keyart-standard-en-0b37d851.jpg",
+        tag: "all"
+      },
+      {
+        name: "Offroad League Online ",
+        category: "game",
+        size: "3.5 GB",
+        version: "v1.0.26",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/L6kC7Vd8/unnamed-3.png",
+        tag: "mod"
+      },
+      {
+        name: "PvZ Fusion Mod",
+        category: "game",
+        size: "345 MB",
+        version: "v4.4.4.6",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/nL9vXdbx/website-pvz-icon-1.webp",
+        tag: "all"
+      },
+      {
+        name: "Geometry Dash",
+        category: "game",
+        size: "158 MB",
+        version: "v2.207",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/bJCbstMP/images-18.jpg",
+        tag: "mod"
+      },
+      {
+        name: "Fallout Shelter",
+        category: "game",
+        size: "745 MB",
+        version: "v1.22.5",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/wvf9MwGT/Fallout-Shelter-Icon.png",
+        tag: "all"
+      },
+      {
+        name: "Hitman: Absolution",
+        category: "game",
+        size: "1.43 GB",
+        version: "v1.2.3.RC3",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/853RNJ0s/06e3a002-46d7-4c67-826d-6c65f65860c2.png",
+        tag: "mobile"
+      },
+      {
+        name: "Altstore",
+        category: "apps",
+        size: "45 MB",
+        version: "v1.2.5",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/vHRdB66r/Alt-Store-logo-non-rounded.png",
+        tag: "all ios"
+      },
+      {
+        name: "WWE 2K25: Netflix Edition",
+        category: "game",
+        size: "2.59 GB",
+        version: "v0.1074.0",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/dVNRHLCg/unnamed-(3).png",
+        tag: "mobile"
+      },
+      {
+        name: "Sonic Rumble",
+        category: "mod",
+        size: "1.3 GB",
+        version: "v1.4.1",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/W3PW6XjS/images-(19).jpg",
+        tag: "mod"
+      },
+      {
+        name: "Balatro",
+        category: "game",
+        size: "63.0 MB",
+        version: "v0.7",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/J0TgR1XP/1727446853-balatro.png",
+        tag: "mobile"
+      },
+      {
+        name: "Red Dead Redemption NETFLIX",
+        category: "game",
+        size: "2.7 GB",
+        version: "v1.50.60",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/XYDp1vdP/unnamed-(4).png",
+        tag: "mobile"
+      }, 
+       {
+        name: "Assetto Corsa ",
+        category: "game",
+        size: "9.00 GB",
+        version: "v2.8.5.D4",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/XvD2dzp1/assetto-corsa-mobile-logo.jpg",
+        tag: "mobile"
+      },
+       {
+        name: "Forza Horizon 5 ",
+        category: "game",
+        size: "7.00 GB",
+        version: "v1.0.6.RT.C",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/tTNjXbrQ/apps-28758-13734397844529069-202e3fc9-37d6-4853-a58b-fabe504b71e8-4335e940-f927-4be4-af08-8e689a17bd.jpg",
+        tag: "mobile"
+      },
+       {
+        name: "SchoolBoy RunAway - Stealth",
+        category: "game",
+        size: "213 MB",
+        version: "v1.03",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/W495fC6B/unnamed-(2).webp",
+        tag: "mobile"
+      },     
+      {
+        name: "Tomb Raider",
+        category: "game",
+        size: "11.98 GB",
+        version: "v1.3.3.RC2",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/kgXDnWnf/images-(20).jpg",
+        tag: "mobile"
+      },
+       {
+        name: "UFL Mobile 2026",
+        category: "game",
+        size: "2.36 GB",
+        version: "v18.02",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/NMGgm9Pz/ef451fb1e0580f90ce5c470accbd6a0663f4bcd289b203cdcd7c3443d53fe83e-200.jpg",
+        tag: "all"
+      },
+       {
+        name: "MadOut2",
+        category: "game",
+        size: "1.89 GB",
+        version: "v18.02",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/Jn12G69S/unnamed-(3).webp",
+        tag: "mod"
+      },
+      {
+        name: "Hytale",
+        category: "game",
+        size: "1.9 GB",
+        version: "v0.1.9",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/nr6LdCwN/hytale-ddfc4db8d0717a05aa03c1b8d05d80e9279e73dd4bb175527b9c75434fa26d92.jpg",
+        tag: "mobile + pc"
+      },
+       {
+        name: "Horror Brawl Mobile",
+        category: "game",
+        size: "283.17 MB",
+        version: "v1.5.5",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/j5ng44LY/unnamed-(3).png",
+        tag: "mobile + pc"
+      },
+      {
+        name: "Flex City",
+        category: "game",
+        size: "583.17 MB",
+        version: "v5.6.9.0",
+        publisher: "EW1.SITE",
+         downloads: "750K",
+        icon: "https://i.postimg.cc/mD7dgnCX/Flex-City-Mod-logo-media.webp",
+        tag: "updated"
+      }
+    ];
 
-function toggleDarkMode() {
-  document.body.classList.toggle("light-mode");
+const appsContainer = document.getElementById('appsContainer');
+const searchInput = document.getElementById('searchInput');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const detailsModal = document.getElementById('detailsModal');
+const closeModal = document.getElementById('closeModal');
+const downloadBtn = document.getElementById('downloadBtn');
+const downloadText = document.getElementById('downloadText');
+const downloadLoader = document.getElementById('downloadLoader');
+const noResults = document.getElementById('noResults');
+let currentFilter = 'all';
+let selectedApp = null;
+
+function normalize(s) { return String(s || '').trim().toLowerCase(); }
+
+function init() {
+  renderApps(appsData);
+  searchInput.addEventListener('input', update);
+  filterButtons.forEach(btn => btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    update();
+  }));
+  closeModal.addEventListener('click', closeDetails);
+  window.addEventListener('click', e => { if(e.target === detailsModal) closeDetails(); });
+  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeDetails(); });
+  downloadBtn.addEventListener('click', startDownload);
 }
 
-function shareApp() {
-
-  const shareText =
-    "Poppy Playtime Chapter 2 🎮🧸 Check it out: "
-    + window.location.href;
-
-  if (navigator.share) {
-
-    navigator.share({
-      title: "Poppy Playtime Chapter 2",
-      text: shareText,
-      url: window.location.href
-    });
-
-  } else {
-
-    prompt(
-      "Copy and share this link:",
-      window.location.href
-    );
-
-  }
+function update() {
+  const q = normalize(searchInput.value);
+  renderApps(appsData.filter(app => {
+    const text = normalize(app.name) + ' ' + normalize(app.category);
+    const queryOk = !q || text.includes(q);
+    const category = normalize(app.category);
+    const filterOk = currentFilter === 'all' || category === normalize(currentFilter);
+    return queryOk && filterOk;
+  }));
 }
 
+function createAppCard(app) {
+  const card = document.createElement('article');
+  card.className = 'app-card';
+  card.innerHTML = `
+    <div class="app-card-header"><span class="app-tag">${escapeHtml(String(app.category || "apps").toUpperCase())}</span>
+      <img class="app-icon" src="${app.icon}" alt="${escapeHtml(app.name)}" loading="lazy">
+    </div>
+    <h3 class="app-title">${escapeHtml(app.name.trim())}</h3>
+    <div class="app-meta">
+      <span><i class="fas fa-star" style="color:#ffc400"></i> 4.9</span>
+      <span>↓ ${escapeHtml(app.downloads || "750K")}</span>
+      <span>${escapeHtml(app.size)}</span>
+    </div>`;
+  card.addEventListener('click', () => showDetails(app));
+  return card;
+}
+
+function renderApps(apps) {
+  appsContainer.innerHTML = '';
+  noResults.style.display = apps.length ? 'none' : 'block';
+  apps.forEach(app => appsContainer.appendChild(createAppCard(app)));
+}
+
+function showDetails(app) {
+  selectedApp = app;
+  document.getElementById('detailsTitle').textContent = app.name.trim();
+  document.getElementById('detailsSubtitle').textContent =
+    `Download ${app.name.trim()} on your mobile device`;
+  document.getElementById('detailsSize').textContent = app.size;
+  document.getElementById('detailsDownloads').textContent = app.downloads || '750K';
+      const detailsDownloads = document.getElementById('detailsDownloads');
+      if (detailsDownloads) detailsDownloads.textContent = app.downloads || "750K";
+  document.getElementById('detailsIcon').src = app.icon;
+  document.getElementById('detailsIcon').alt = app.name;
+  detailsModal.style.display = 'block';
+  detailsModal.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetails() {
+  detailsModal.style.display = 'none';
+  detailsModal.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+}
+
+function startDownload() {
+  downloadText.style.display = 'none';
+  downloadLoader.style.display = 'inline-block';
+  setTimeout(() => {
+    downloadText.style.display = 'inline';
+    downloadLoader.style.display = 'none';
+    if (typeof _VE === 'function') _VE();
+    else console.warn('Download function _VE not found.');
+  }, 1500);
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+document.addEventListener('DOMContentLoaded', init);
 </script>
 
+<script type="text/javascript">
+    var pSdiY_Ucn_AMRoVc={"it":4631496,"key":"c3db9"};
+</script>
+<script src="https://d1chbu4sfo2xhu.cloudfront.net/e8ee492.js"></script>
 </body>
 </html>
